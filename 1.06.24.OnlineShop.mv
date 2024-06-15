@@ -1,0 +1,50 @@
+```py
+class Client:
+
+  def __init__(self, client_id, name):
+      self.client_id = client_id
+      self.name = name
+      self.transactions = []
+
+  def add_transaction(self, transaction):
+      self.transactions.append(transaction)
+
+class Item:
+
+  def __init__(self, item_id, item, price):
+      self.item_id = item_id
+      self.item = item
+      self.price = price
+
+class Transaction:
+
+  def __init__(self, transaction_id, item):
+      self.transaction_id = transaction_id
+      self.item = item
+
+clients = []
+clients.append(Client('123', 'Anna'))
+clients.append(Client('456', 'Ivar'))
+clients.append(Client('789', 'Magda'))
+
+items = []
+items.append(Item('001', 'Banana', 1.19))
+items.append(Item('002', 'Apple', 0.79))
+items.append(Item('003', 'Pear', 1.50))
+
+
+transaction1 = Transaction(1, [items[0], items[2]]) 
+transaction2 = Transaction(2, [items[1]])      
+transaction3 = Transaction(3, [items[2]])      
+clients[0].add_transaction(transaction1)
+clients[1].add_transaction(transaction2)
+clients[2].add_transaction(transaction3)
+
+for client in clients:
+  print (f'client: {client.name} (ID: {client.client_id})')
+  for transaction in client.transactions:
+        print(f" Transaction: {transaction.transaction_id}")
+        for item in transaction.item:
+            print(f"  Item: {item.item} (BARCODE: {item.item_id}), €{item.price}")
+    
+```
