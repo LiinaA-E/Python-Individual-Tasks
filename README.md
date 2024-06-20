@@ -11,7 +11,7 @@ Develop a simple prototype for an online shop
 - all transactions of a client
 - all items purchased in each transaction of the client
 
-## 15.06.24 Python individual work
+## 15.06.24 Python individual work/ Data reading
 
 Easy Level
 In this level, you will read the data from prices.txt (see additional files),  compute the total price of all items, and count the total number of purchased items. 
